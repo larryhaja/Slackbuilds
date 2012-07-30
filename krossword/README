@@ -1,0 +1,4 @@
+This is a crossword playing game and editor for KDE 4. You can use it to create
+new crosswords. It can open and save *.puz-files (AcrossLite) and it's own
+*.kwp-files (which are XML files). You can download lots of crosswords from
+within the game. You can also print crosswords.
