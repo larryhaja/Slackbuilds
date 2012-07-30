@@ -5,9 +5,9 @@
 # Written by Larry Hajali <larryhaja[at]gmail[dot]com>
 
 PRGNAM=spyder
-VERSION=${VERSION:-2.1.10}
+VERSION=${VERSION:-2.1.11}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-_lh}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
