@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Frogatto
+Comment=Young frog's adventure
+Comment[ru]=Приключения лягушонка
+Exec=frogatto
+Icon=frogatto
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Game;ArcadeGame;
