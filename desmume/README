@@ -1,0 +1,5 @@
+DeSmuME is a Nintendo DS emulator running homebrew demos and commercial games.
+
+DeSmuMe requires gtkglext, OpenAL, zziplib, soundtouch and agg.
+
+Optionally DeSmuMe can use lua if installed.
