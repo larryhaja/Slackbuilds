@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Veusz
+GenericName=Scientific Plotter
+GenericName[fr]=Grapheur scientifique
+Comment=Produce publication-ready output
+Icon=veusz
+Exec=veusz
+Categories=Math;Education;Science;
+Terminal=false
+StartupNotify=false
