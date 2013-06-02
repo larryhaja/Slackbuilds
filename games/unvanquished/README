@@ -1,0 +1,17 @@
+Players fight online in team based combat in a war of aliens against humans.
+
+While the humans are equipped with weapons that they use to exterminate the 
+alien presence, the aliens have only their pincers and a few special attacks, 
+such as poison gas, and ranged electrical and projectile attacks. Players do not 
+spawn at random points in the map; instead, each map has default spawn points 
+and both teams are capable of moving them wherever they please. Both teams have 
+other buildings that round out their base, such as machinegun turrets for the 
+humans and barricades for the aliens. Either team wins by destroying the 
+opposing team's spawn points and killing any remaining members of that team 
+before they are able to build any more spawn points or the game timer ends.
+
+Optional dependency is mumble.
+
+Note: An optional download script download-pk3.sh has been provided in
+/usr/share/Unvanquished so optional Asset's can be downloaded from SourceForge.
+The default download directory is users ~/.Unvanquished/main folder.

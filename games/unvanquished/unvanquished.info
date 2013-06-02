@@ -1,0 +1,43 @@
+PRGNAM="unvanquished"
+VERSION="0.15.0"
+HOMEPAGE="http://www.unvanquished.net"
+DOWNLOAD="https://github.com/Unvanquished/Unvanquished/archive/v0.15.0.tar.gz \
+          http://downloads.sourceforge.net/unvanquished/Asset_Licenses.txt \
+          http://downloads.sourceforge.net/unvanquished/Assets/vms-0.15.0.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak0.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak1.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak2.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak4.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak5.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak6.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak7.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak8.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pak9.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pakA.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pakB.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pakC.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pakD.pk3 \
+          http://downloads.sourceforge.net/unvanquished/Assets/pakE.pk3"
+MD5SUM="2661120ddbf3e9521998f85106d8e7c8 \
+        af64d92487a39b9e85aa43554a2cc68a \
+        796946dd939546285c7479ac0ac4f3dd \
+        cae4f88956923ed116612052fa62b717 \
+        14aa78e706ee2f28861650ecc0b716a7 \
+        25551e1a43963113bba1ae8fa5cdca89 \
+        522bdb41e26b31ba00a7156df65b4b51 \
+        a9c16f792133d6f997ea96fe0763c7e6 \
+        eebc9c8a485c00539717d4e5ee29b60d \
+        6ac698c1680bbac4c40876e0b1849d82 \
+        b2f317bac918e2f84fbab6415158fccf \
+        6a03b6033ef6260c02de51c22fcc5c6b \
+        d3b5337e8bbdbe48f96c3d5cc9120898 \
+        19f550f402ddd82cfe909b31e689f617 \
+        7964debbfc081b4779b5f70cf7226f6e \
+        edf5b6e0a68d9606bca95e0a9d6f010a \
+        7f131a2b7d9a7fb405a41cd157316939 \
+        2d8bf2dff2324935c00f54062840807e"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="OpenAL libwebp speex tinyxml xvidcore"
+MAINTAINER="Larry Hajali"
+EMAIL="larryhaja[at]gmail[dot]com"
