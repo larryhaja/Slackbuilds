@@ -1,0 +1,27 @@
+diff -Naur doomsday-1.10.2.orig/doomsday/dep_fmod.pri doomsday-1.10.2/doomsday/dep_fmod.pri
+--- doomsday-1.10.2.orig/doomsday/dep_fmod.pri	2013-05-03 05:52:36.000000000 +0000
++++ doomsday-1.10.2/doomsday/dep_fmod.pri	2013-05-05 01:35:04.318049360 +0000
+@@ -1,9 +1,9 @@
+ # Build configuration for FMOD Ex.
+ isEmpty(FMOD_DIR) {
+-    error("dep_fmod: FMOD SDK path not defined, check your config_user.pri (FMOD_DIR)")
++    FMOD_DIR = $$PREFIX/include/fmodex
+ }
+ 
+-INCLUDEPATH += $$FMOD_DIR/api/inc
++INCLUDEPATH += $$FMOD_DIR
+ 
+ win32 {
+     # Windows.
+@@ -24,9 +24,9 @@
+     contains(QMAKE_HOST.arch, x86_64): libname = fmodex64
+     else: libname = fmodex
+ 
+-    LIBS += -L$$FMOD_DIR/api/lib -l$$libname
++    LIBS += -l$$libname
+ 
+     INSTALLS += fmodlibs
+-    fmodlibs.files = $$FMOD_DIR/api/lib/lib$${libname}.so
++    fmodlibs.files = $$DENG_LIB_DIR/lib$${libname}.so
+     fmodlibs.path = $$DENG_LIB_DIR
+ }

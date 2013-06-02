@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+        |-----handy-ruler------------------------------------------------------|
+doomsday: doomsday
+doomsday:
+doomsday: The Doomsday Engine allows you to play the classic first-person 
+doomsday: shooters DOOM, Heretic, and Hexen using modern technology, with
+doomsday: hardware accelerated 3D graphics, surround sound and much more.
+doomsday:
+doomsday: Homepage: http://dengine.net/
+doomsday:
+doomsday:
+doomsday:
+doomsday:
