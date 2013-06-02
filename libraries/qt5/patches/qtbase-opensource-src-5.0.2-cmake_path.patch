@@ -1,0 +1,33 @@
+diff -up qtbase-opensource-src-5.0.2/mkspecs/features/data/cmake/Qt5BasicConfig.cmake.in.cmake_path qtbase-opensource-src-5.0.2/mkspecs/features/data/cmake/Qt5BasicConfig.cmake.in
+--- qtbase-opensource-src-5.0.2/mkspecs/features/data/cmake/Qt5BasicConfig.cmake.in.cmake_path	2013-04-08 19:10:52.000000000 -0500
++++ qtbase-opensource-src-5.0.2/mkspecs/features/data/cmake/Qt5BasicConfig.cmake.in	2013-04-10 16:48:53.643238884 -0500
+@@ -83,7 +83,7 @@ if (NOT TARGET Qt5::$${CMAKE_MODULE_NAME
+             find_package(Qt5${_module_dep}
+                 ${_Qt5$${CMAKE_MODULE_NAME}_DEPENDENCIES_FIND_QUIET}
+                 ${_Qt5$${CMAKE_MODULE_NAME}_FIND_DEPENDENCIES_REQUIRED}
+-                PATHS \"${_qt5$${CMAKE_MODULE_NAME}_install_prefix}\" NO_DEFAULT_PATH
++                PATHS \"${CMAKE_CURRENT_LIST_DIR}/..\" NO_DEFAULT_PATH
+             )
+         endif()
+ 
+diff -up qtbase-opensource-src-5.0.2/src/corelib/Qt5CoreMacros.cmake.cmake_path qtbase-opensource-src-5.0.2/src/corelib/Qt5CoreMacros.cmake
+--- qtbase-opensource-src-5.0.2/src/corelib/Qt5CoreMacros.cmake.cmake_path	2013-04-08 19:11:13.000000000 -0500
++++ qtbase-opensource-src-5.0.2/src/corelib/Qt5CoreMacros.cmake	2013-04-10 17:33:28.775414587 
+-0500
+@@ -215,6 +215,7 @@ function(QT5_ADD_RESOURCES outfiles )
+     set(${outfiles} ${${outfiles}} PARENT_SCOPE)
+ endfunction()
+ 
++set(_Qt5_COMPONENT_PATH "${CMAKE_CURRENT_LIST_DIR}/..")
+ 
+ if (NOT CMAKE_VERSION VERSION_LESS 2.8.9)
+     macro(qt5_use_modules _target _link_type)
+@@ -234,7 +235,7 @@ if (NOT CMAKE_VERSION VERSION_LESS 2.8.9
+ 
+         foreach(_module ${_qt5_modules})
+             if (NOT Qt5${_module}_FOUND)
+-                find_package(Qt5${_module} PATHS ${_qt5Core_install_prefix} NO_DEFAULT_PATH)
++                find_package(Qt5${_module} PATHS "${_Qt5_COMPONENT_PATH}" NO_DEFAULT_PATH)
+                 if (NOT Qt5${_module}_FOUND)
+                     message(FATAL_ERROR "Can not use \"${_module}\" module which has not yet been found.")
+                 endif()
