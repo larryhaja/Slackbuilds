@@ -8,7 +8,7 @@ SRCNAM=AssaultCube
 PRGNAM=assaultcube
 VERSION=1.1.0.4
 BUILD=${BUILD:-2}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-_lh}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -19,7 +19,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/lh}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
