@@ -24,7 +24,7 @@
 
 PRGNAM=xbmc
 VERSION=${VERSION:-12.2}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_lh}
 
 if [ -z "$ARCH" ]; then
@@ -36,7 +36,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/lh}
+TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
@@ -62,7 +62,6 @@ cd $TMP
 rm -rf $PRGNAM-$VERSION
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
-tar xvf $CWD/taglib-1.8.tar.gz
 tar xvf $CWD/$PRGNAM-pvr-addons-12.0-Frodo.tar.gz || tar xvf $CWD/12.0-Frodo.tar.gz
 chown -R root:root .
 find . \
@@ -71,18 +70,25 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+# No need to show Git: "Version" in a release build.
+sed -i 's|^#ifdef GIT_REV|#ifndef GIT_REV|' $PRGNAM/GUIInfoManager.cpp
+
+# Remove the icon update from the Makefile.in. We do this
+# in the post install script.
+sed -i '/gtk-update-icon-cache/d' Makefile.in
+
 # Fix for sse2 cpu's.
 if grep 'sse2' /proc/cpuinfo 2>&1 > /dev/null; then
   patch -p1 < $CWD/patches/sse2.patch
 fi
 
-# No need to show Git: "Version" in a release build.
-sed -i 's|^#ifdef GIT_REV|#ifndef GIT_REV|' $PRGNAM/GUIInfoManager.cpp
-
 # Patch for building against rtmpdump. Only needed if xbmc fails to build
 # w/rtmpdump.  See the following link for a rather obtuse explanation.
 # http://slaxbmc.blogspot.com/2011/03/23-install-xbmc-from-source.html
 patch -p1 < $CWD/patches/xbmc-rtmpdump-build.patch
+
+# Patch for Samba 4.0.
+patch -p1 < $CWD/patches/samba-4.0.patch
 
 # Hack for using afpfs-ng.
 cat lib/afpfs-ng/fix_afpfs-ng_includes.patch | head -1336 | tail -1172 | patch -p1
@@ -109,23 +115,6 @@ if [ "${PULSE:-no}" == "yes" ]; then
   OPT_DEPS="$OPT_DEPS --enable-pulse"
 fi
 
-# XBMC requires taglib >= 1.8. Slackware 14.0 comes with taglib 1.7.2.
-# We are going to build a static version of taglib for XBMC.
-cd taglib-1.8
-  cmake -G "Unix Makefiles" \
-    -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-    -DENABLE_STATIC=ON \
-    -DLIB_SUFFIX="${LIBDIRSUFFIX}" \
-    -DWITH_MP4=ON \
-    -DWITH_ASF=ON \
-    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-    -DCMAKE_BUILD_TYPE=Release .
-
-  make VERBOSE=1
-  make install DESTDIR=$PWD
-cd ..
-
 # Build the pvr addons.
 cd $PRGNAM-pvr-addons-12.0-Frodo
   ./bootstrap
@@ -143,9 +132,6 @@ cd $PRGNAM-pvr-addons-12.0-Frodo
     make
 cd ..
 
-TAGLIB_CFLAGS="-I$PWD/taglib-1.8/usr/include" \
-TAGLIB_LIBS="-L$PWD/taglib-1.8/usr/lib${LIBDIRSUFFIX} -ltag" \
-LDFLAGS="-L$PWD/taglib-1.8/usr/lib${LIBDIRSUFFIX} -ltag" \
 CFLAGS="$SLKCFLAGS $AFPFS_NGFLAGS" \
 CXXFLAGS="$SLKCFLAGS $AFPFS_NGFLAGS" \
 ./configure \
@@ -169,15 +155,14 @@ make
 
 # Wii controller usage. Default is no.
 if ! [ "${WII:-no}" = "no" ]; then
-  # SBO comes with latest release version of CWIID, which is 5 years old.
-  # Two options have been deactivated because they are not available in
-  # release version of cwiid.
-  patch -p1 < $CWD/patches/cwiid-old-api.patch
   make eventclients DESTDIR=$PKG WII_EXTRA_OPTS="-DCWIID_OLD"
   find $PKG/usr/lib${LIBDIRSUFFIX}/python* -iname "*\.py" -exec chmod 0644 '{}' \;
 fi
 
 make install DESTDIR=$PKG
+
+# Install the TexturePacker.
+install -m 0755 tools/TexturePacker/TexturePacker $PKG/usr/lib${LIBDIRSUFFIX}/$PRGNAM
 
 # Remove *.in files from the pvr addons.
 find $PKG -name "*\.in" -exec rm -f '{}' \;
