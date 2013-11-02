@@ -23,12 +23,6 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Merged some ideas from Alex Sarmardzic's script for qt4 at SlackBuilds.org
-# ^^ Modified by Robby Workman <rworkman@slackware.com> for QT4 & KDE4
-
-# We're using qt-copy instead of a released qt version, as this git release
-# has at least one bugfix strongly recommended by the kde developers.
-
 # This is the highly modified version qt.SlackBuild found in Slackware
 # tailored to Qt 5. Modified by Larry Hajali.
 
@@ -98,6 +92,8 @@ export OPENSOURCE_CXXFLAGS="$SLKCFLAGS"
   -opensource \
   -prefix /usr/lib${LIBDIRSUFFIX}/$PRGNAM \
   -sysconfdir /etc/xdg \
+  -docdir "/usr/doc/$PRGNAM-$VERSION/doc" \
+  -headerdir "/usr/include/$PRGNAM" \
   -system-libpng \
   -system-libjpeg \
   -system-zlib \
@@ -161,10 +157,10 @@ cat > $PKG/usr/lib${LIBDIRSUFFIX}/$PRGNAM/lib/pkgconfig/Qt5.pc << EOF
 prefix=/usr/lib${LIBDIRSUFFIX}/$PRGNAM
 bindir=\${prefix}/bin
 datadir=\${prefix}
-docdir=\${prefix}/doc
+docdir=/usr/doc/$PRGNAM-$VERSION/doc
 archdatadir=\${prefix}
 examplesdir=\${prefix}/examples
-headerdir=\${prefix}/include
+headerdir=/usr/include/$PRGNAM
 importdir=\${prefix}/imports
 qmldir=\${prefix}/qml
 libdir=\${prefix}/lib
@@ -233,7 +229,6 @@ cp -a \
   README qtbase/{header*,LGPL_EXCEPTION.txt,LICENSE.*L} \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
-ln -s /usr/lib${LIBDIRSUFFIX}/$PRGNAM/doc $PKG/usr/doc/$PRGNAM-$VERSION/doc
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
