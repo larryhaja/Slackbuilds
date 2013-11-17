@@ -1,0 +1,14 @@
+tvpvrd is a highly flexible and configurable server daemon that acts as an 
+advanced digital TV recorder using one or several installed TV capture cards.
+
+The server manages scheduled recordings and provides an efficient command 
+language interface on a dedicated TCP/IP port. As an alternative interface the 
+daemon also comes with a basic WEB-interface through the daemons built in 
+micro-web-server. To keep the WEB-interface simple only the most common commands 
+are available through this interface.
+
+The goal with this project is to provide an advanced recording and transcoding 
+(using ffmpeg) server without the need to configure complex databases or GUI. 
+The daemon sits unobtrusively in the background.
+
+Optional dependencies: iniparser

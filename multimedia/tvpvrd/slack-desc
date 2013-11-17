@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+      |-----handy-ruler------------------------------------------------------|
+tvpvrd: tvpvrd
+tvpvrd:
+tvpvrd: tvpvrd is a highly flexible and configurable server daemon that acts
+tvpvrd: as an advanced digital TV recorder using one or several installed TV
+tvpvrd: capture cards.
+tvpvrd:
+tvpvrd: Homepage:
+tvpvrd: http://sourceforge.net/apps/mediawiki/tvpvrd/index.php?title=Main_Page
+tvpvrd:
+tvpvrd:
+tvpvrd:
