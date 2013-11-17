@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                   |-----handy-ruler------------------------------------------------------|
+xfce4-wmdock-plugin: xfce4-wmdock-plugin
+xfce4-wmdock-plugin:
+xfce4-wmdock-plugin: The WMdock plugin is a compatibility layer for running WindowMaker
+xfce4-wmdock-plugin: dockapps on the XFCE desktop. It integrates the dockapps into a panel,
+xfce4-wmdock-plugin: closely resembling the look and feel of the WindowMaker dock or clip,
+xfce4-wmdock-plugin: respectively.
+xfce4-wmdock-plugin:
+xfce4-wmdock-plugin: Homepage:
+xfce4-wmdock-plugin:   http://goodies.xfce.org/projects/panel-plugins/xfce4-wmdock-plugin
+xfce4-wmdock-plugin:
+xfce4-wmdock-plugin:
