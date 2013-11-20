@@ -9,4 +9,4 @@ object-based interface. The program also provides a command line and scripting
 interface (based on Python) to its plotting facilities. It can also act as a
 Python plotting module.
 
-Requires numpy. Optional run time dependency is pyfits.
+Optional: pyfits, pyemf, PyMinuit
