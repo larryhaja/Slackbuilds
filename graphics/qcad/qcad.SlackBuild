@@ -70,7 +70,7 @@ find . \
  -exec chmod 644 {} \;
 
 # Fix directory location where plugin gets installed.
-patch -p1 < $CWD/trasactionlistner-path-fix.patch
+patch -p1 < $CWD/transactionlistener-path-fix.patch
 
 qmake QMAKE_CFLAGS+="$SLKCFLAGS" QMAKE_CXXFLAGS+="$SLKCFLAGS" \
   CONFIG+=release -o Makefile $PRGNAM.pro
