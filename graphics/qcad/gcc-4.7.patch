@@ -1,0 +1,12 @@
+diff -Naur qcad-3.4.3.0.orig/src/core/RThread.cpp qcad-3.4.3.0/src/core/RThread.cpp
+--- qcad-3.4.3.0.orig/src/core/RThread.cpp	2013-11-12 23:23:11.000000000 +0000
++++ qcad-3.4.3.0/src/core/RThread.cpp	2013-11-27 17:44:32.162695964 +0000
+@@ -20,6 +20,8 @@
+ 
+ #include "RThread.h"
+ 
++#include <unistd.h>
++
+ RThread::RThread(QObject * parent) :
+     QThread(parent) {
+ }
