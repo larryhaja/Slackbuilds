@@ -1,0 +1,16 @@
+diff -Naur veusz-1.19.1.orig/veusz/plugins/votable.py veusz-1.19.1/veusz/plugins/votable.py
+--- veusz-1.19.1.orig/veusz/plugins/votable.py	2013-11-27 18:00:21.000000000 +0000
++++ veusz-1.19.1/veusz/plugins/votable.py	2013-11-29 03:11:49.560830843 +0000
+@@ -22,7 +22,11 @@
+ from .datasetplugin import Dataset1D, DatasetText
+ 
+ try:
+-    from astropy.io.vo.table import parse
++    import astropy.version
++    if astropy.version.version >= 0.2:
++        from astropy.io.votable.table import parse
++    else:
++        from astropy.io.vo.table import parse
+ 
+ except ImportError:
+     print('VO table import: astropy module not available')
