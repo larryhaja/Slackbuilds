@@ -1,0 +1,8 @@
+SAMPy is a Python implementation of the IVOA Simple Application Messaging
+Protocol [*] version 1.2 (with Web Profile support).
+
+SAMPy Python module (sampy.py) provides classes to easily:
+
+instantiate one or multiple Hubs;
+interface an application or script to a running Hub;
+create and manage a SAMP client.
