@@ -1,4 +1,4 @@
-pysrt is mainly designed as a library, but if you are experiencing troubles with 
-bad subtitles you can first try to use ruby-osdb which will try to find the best 
-subtitle for your movie. If you are still unlucky pysrt also provide an srt 
+pysrt is mainly designed as a library, but if you are experiencing troubles with
+bad subtitles you can first try to use ruby-osdb which will try to find the best
+subtitle for your movie. If you are still unlucky pysrt also provide an srt
 command useful for either shift, split, or rescale a .srt file.
