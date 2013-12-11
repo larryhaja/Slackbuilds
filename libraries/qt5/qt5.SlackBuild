@@ -90,10 +90,9 @@ export OPENSOURCE_CXXFLAGS="$SLKCFLAGS"
 ./configure -v \
   -confirm-license \
   -opensource \
-  -prefix /usr/lib${LIBDIRSUFFIX}/$PRGNAM \
-  -sysconfdir /etc/xdg \
-  -docdir "/usr/doc/$PRGNAM-$VERSION/doc" \
-  -headerdir "/usr/include/$PRGNAM" \
+  -prefix "/usr/lib${LIBDIRSUFFIX}/$PRGNAM" \
+  -sysconfdir "/etc/xdg" \
+  -docdir "/usr/doc/$PRGNAM-$VERSION" \
   -system-libpng \
   -system-libjpeg \
   -system-zlib \
@@ -157,10 +156,10 @@ cat > $PKG/usr/lib${LIBDIRSUFFIX}/$PRGNAM/lib/pkgconfig/Qt5.pc << EOF
 prefix=/usr/lib${LIBDIRSUFFIX}/$PRGNAM
 bindir=\${prefix}/bin
 datadir=\${prefix}
-docdir=/usr/doc/$PRGNAM-$VERSION/doc
+docdir=/usr/doc/$PRGNAM-$VERSION
 archdatadir=\${prefix}
 examplesdir=\${prefix}/examples
-headerdir=/usr/include/$PRGNAM
+headerdir=\${prefix}/include
 importdir=\${prefix}/imports
 qmldir=\${prefix}/qml
 libdir=\${prefix}/lib
