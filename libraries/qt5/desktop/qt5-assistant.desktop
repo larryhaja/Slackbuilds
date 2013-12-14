@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Qt Assistant
-Comment=Shows Qt documentation and examples
+Name=Qt5 Assistant
+Comment=Shows Qt5 documentation and examples
 Exec=/usr/lib@LIBDIR@/qt5/bin/assistant
 Icon=qt5-assistant
 Terminal=false

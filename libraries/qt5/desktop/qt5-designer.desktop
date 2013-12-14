@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Qt Designer
+Name=Qt5 Designer
 GenericName=Interface Designer
-Comment=Design GUIs for Qt applications
+Comment=Design GUIs for Qt5 applications
 Exec=/usr/lib@LIBDIR@/qt5/bin/designer
 Icon=qt5-designer
 MimeType=application/x-designer;

@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Qt QDbusViewer 
-GenericName=D-Bus Debugger
+Name=Qt5 QDbusViewer 
+GenericName=Qt5 D-Bus Debugger
 Comment=Debug D-Bus applications
 Exec=/usr/lib@LIBDIR@/qt5/bin/qdbusviewer
 Icon=qt5-qdbusviewer
