@@ -15,8 +15,3 @@ if ( ! $?QT5DIR ) then
     endif
 endif
 set path = ( $path $QT5DIR/bin )
-if ( $?CPLUS_INCLUDE_PATH ) then
-    setenv CPLUS_INCLUDE_PATH $QT5DIR/include:$CPLUS_INCLUDE_PATH
-else
-    setenv CPLUS_INCLUDE_PATH $QT5DIR/include
-endif

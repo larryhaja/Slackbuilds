@@ -13,11 +13,5 @@ else
     fi
   done
 fi
-if [ ! "$CPLUS_INCLUDE_PATH" = "" ]; then
-  CPLUS_INCLUDE_PATH=$QT5DIR/include:$CPLUS_INCLUDE_PATH
-else
-  CPLUS_INCLUDE_PATH=$QT5DIR/include
-fi
 PATH="$PATH:$QT5DIR/bin"
 export QT5DIR
-export CPLUS_INCLUDE_PATH
