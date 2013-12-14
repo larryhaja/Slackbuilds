@@ -1,0 +1,44 @@
+--- /var/lib/sbopkg/SBo/14.1/libraries/lensfun/lensfun.SlackBuild	2013-11-25 09:19:36.000000000 -0800
++++ lensfun.SlackBuild	2013-12-07 11:46:08.982322088 -0800
+@@ -67,23 +67,28 @@
+  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+ 
+-CFLAGS="$SLKCFLAGS" \
+-CXXFLAGS="$SLKCFLAGS" \
+-  ./configure \
+-  --prefix=/usr \
+-  --libdir=/usr/lib${LIBDIRSUFFIX} \
+-  --docdir=/usr/doc/$PRGNAM-$VERSION \
+-  || exit 1
+-
+-make install DESTDIR=$PKG || exit 1
++mkdir -p build-$PRGNAM
++cd build-$PRGNAM
++  cmake -G "Unix Makefiles" \
++    -DCMAKE_INSTALL_PREFIX:PATH=/usr \
++    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
++    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
++    -DLIB_SUFFIX="$LIBDIRSUFFIX" \
++    -DDOCDIR:PATH="doc/$PRGNAM-$VERSION" \
++    -DBUILD_AUXFUN:BOOL=ON \
++    -DBUILD_FOR_SSE:BOOL=ON \
++    -DBUILD_FOR_SSE2:BOOL=ON \
++    -DBUILD_DOC:BOOL=ON \
++    -DCMAKE_BUILD_TYPE=Release .. || exit 1
++    
++  make VERBOSE=1 || exit 1
++  make install DESTDIR=$PKG || exit 1
++cd -
+ 
+ find $PKG | xargs file | grep -e "executable" -e "shared object" \
+   | grep ELF | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null
+ 
+-( cd $PKG/usr/man
+-  find . -type f -exec gzip -9 {} \;
+-  for i in $(find . -type l) ; do ln -s $(readlink $i).gz $i.gz ; rm $i ; done
+-)
++cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+ 
+ mkdir -p $PKG/install
+ cat $CWD/slack-desc > $PKG/install/slack-desc
