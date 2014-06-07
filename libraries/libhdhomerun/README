@@ -1,0 +1,11 @@
+Configuration utility for Silicon Dust HD HomeRun. This package supports the 
+Silicon Dust HDHomeRun. The HDHomeRun is a networked, two tuner digital TV tuner 
+compatible with MythTV, SageTV, and VLC.
+
+This utility can be used for:
+ * Discovering your tuner location and name
+ * Gathering tuner settings
+ * Setting tuner setting
+ * Performing scans
+ * Performing firmware upgrades
+ 
