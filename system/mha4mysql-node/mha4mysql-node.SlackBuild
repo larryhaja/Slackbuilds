@@ -25,7 +25,7 @@
 PRGNAM=mha4mysql-node
 VERSION=${VERSION:-0.56}
 BUILD=${BUILD:-1}
-TAG=${TAG:-_SBo}
+TAG=${TAG:-_lh}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -36,7 +36,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 CWD=$(pwd)
-TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-/tmp/lh}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
