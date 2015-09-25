@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+                         |-----handy-ruler------------------------------------------------------|
+perl-Parallel-ForkManager: perl-Parallel-ForkManager
+perl-Parallel-ForkManager:
+perl-Parallel-ForkManager: This module is intended for use in operations that can be done in
+perl-Parallel-ForkManager: parallel where the number of processes to be forked off should be
+perl-Parallel-ForkManager: limited. Typical use is a downloader which will be retrieving
+perl-Parallel-ForkManager: hundreds/thousands of files.
+perl-Parallel-ForkManager:
+perl-Parallel-ForkManager: Homepage: http://search.cpan.org/dist/Parallel-ForkManager/
+perl-Parallel-ForkManager:
+perl-Parallel-ForkManager:
+perl-Parallel-ForkManager:
