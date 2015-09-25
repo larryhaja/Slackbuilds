@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+              |-----handy-ruler------------------------------------------------------|
+mha4mysql-node: mha4mysql-node (MySQL failover manager - node tool)
+mha4mysql-node:
+mha4mysql-node: Master High Availability Manager and tools for MySQL (MHA) for
+mha4mysql-node: automating master failover and fast master switch. This package
+mha4mysql-node: contains utility scripts running on a MySQL server machine. See 
+mha4mysql-node: http://code.google.com/p/mysql-master-ha/wiki/TableOfContents?tm=6
+mha4mysql-node: for details.
+mha4mysql-node:
+mha4mysql-node: Homepage: https://code.google.com/p/mysql-master-ha/
+mha4mysql-node:
+mha4mysql-node:
